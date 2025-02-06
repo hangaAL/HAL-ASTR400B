@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[all]{xy}
+\usepackage{listings}
+
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym}
+\usepackage{geometry}        
+\geometry{letterpaper}    
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{dcolumn}
+
+\newtheorem{problem}{Question}
+
+\newenvironment{solution}[1][\it{}]{\textbf{#1 }}
+
+
+\begin{document}
+\noindent ASTR 400B \hfill Homework 3\\
+Hanga Andras-Letanovszky (02/06/25)
+
+\hrulefill
+
+\begin{table}[h!]
+    \fontsize{9pt}{9pt}\selectfont
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \begin{tabular}{ | l | c | c | c | c | c | }
+         \multicolumn{1}{c}{Galaxy Name} & \multicolumn{1}{c}{Halo Mass ($10^{12}$ M$_\odot$)} & \multicolumn{1}{c}{Disk Mass ($10^{12}$ M$_\odot$)} & \multicolumn{1}{c}{Bulge Mass ($10^{12}$ M$_\odot$)} & \multicolumn{1}{c}{Total ($10^{12}$ M$_\odot$)} & \multicolumn{1}{c}{$f_{\mathrm{bar}}$}\\
+         \hline
+         Milky Way & 1.975 & 0.075 & 0.010 & 2.060 & 0.041 \\
+         M31 & 1.921 & 0.120 & 0.019 & 2.060 & 0.067 \\
+         M33 & 0.187 & 0.009 & 0.000 & 0.196 & 0.046 \\
+         \textbf{Local Group} & \textbf{4.083} & \textbf{0.204} & \textbf{0.029} & \textbf{4.316} & \textbf{0.054} \\
+         \hline
+    \end{tabular}
+    \caption{Mass Breakdown of the Local Group}
+    \label{tab:my_label}
+\end{table}
+
+\begin{problem}
+\end{problem}
+\begin{solution}
+    The Milky Way and M31 have the same total mass (to 3 decimal points) in this simulation. The halo dominates both of their total masses.
+\end{solution}
+
+\begin{problem}
+\end{problem}
+\begin{solution}
+    M31 has much more stellar mass than the Milky Way, so I'd expect it to be the more luminous of the two.
+\end{solution}
+
+\begin{problem}
+\end{problem}
+\begin{solution}
+    The ratio of the dark matter mass of the Milky Way to M31 is 1.03, i.e. they have almost the same amount of dark matter, although the Milky Way has more. This is very surprising, given that M31 has so much more stellar mass than the Milky Way.
+\end{solution}
+\begin{problem}
+\end{problem}
+\begin{solution}
+    The baryon fraction is 0.041 for the Milky Way, 0.067 for M31, and 0.046 for M33. The universal $\Omega_b/\Omega_m$ is 0.16, which is over twice the individual galaxy baryon fractions. The universal baryon fraction might be larger than the galaxy baryon fractions because it includes all the gas and dust in the circumgalactic medium, which is excluded from the galaxy baryon fractions.
+\end{solution}
+
+\end{document}
