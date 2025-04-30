@@ -1,0 +1,265 @@
+%%
+%% using aastex version 6.3
+%% Setup
+
+\documentclass[twocolumn]{aastex631}
+
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+
+\begin{document}
+
+\title{The Morphology of the Stellar Remnant of the Milky Way + M31 Major Merger}
+
+%% Author
+
+\author{Hanga Andras-Letanovszky}
+\affiliation{Department of Astronomy, University of Arizona,  933 N Cherry Ave, Tucson, AZ}
+
+%% Submission date
+\date[Draft submitted ]{29 April 2025}
+
+%% Keywords
+% must bold and define at first use in text!
+\keywords{Major Merger -- Dry Merger -- Oblate/Prolate/Triaxial -- Spiral Galaxy -- Elliptical Galaxy}
+
+%% Introduction
+
+\section{Introduction}
+
+% Define your proposed topic and how it relates to galaxy evolution
+Mergers are collisions of two or more galaxies in which the central nuclei of the galaxies have merged, making it impossible to define multiple distinct centers of mass corresponding to the parent galaxies.
+Mergers are classified using multiple factors.
+One is the mass ratio of the progenitors: \textbf{major mergers} are mergers of galaxies with roughly equal masses, whereas minor mergers have progenitors with a larger mass difference (in the case of binary mergers, a mass ratio of 1:4 or less).
+Another is gas-richness of the merger: wet mergers occur between gas-\textit{rich} galaxies, and \textbf{dry mergers} between gas-\textit{poor} galaxies.
+Regardless of the type, though, mergers leave behind a remnant consisting of the stars and gas from the parent galaxies that remained gravitationally bound post-merger. 
+An example of a remnant from a simulated merger is shown in Figure \ref{fig:merger} at $t$ = 2.66 Gyr.
+The properties of the remnant --- in particular, its morphology, or shape --- are heavily influenced by the properties of the parent galaxies as well as how the collision occurred \citep{Barnes+1992}. 
+This shape is broadly described in terms of whether it is more disk-like or elliptical, and whether it contains any substructure; most commonly, remnants are \textbf{elliptical galaxies}, which rarely have a disk and contain little to no substructure, as opposed to spiral galaxies, which are disk-like with spiral arms.
+In principle, the 3D structure of the remnant can be described as \textbf{oblate} ("squashed", like a grapefruit), \textbf{prolate} ("stretched", like a football), or \textbf{triaxial} (with all axes different lengths).
+We can only observe 2D projections of this 3D shape onto the sky, however, so in practice we often quantify its shape using its \textbf{ellipticity} $\varepsilon$, defined as 
+\begin{equation}\label{eq:ellipticity}
+    \varepsilon = 1 - \frac{b}{a}
+\end{equation}
+where $b$ is the semiminor axis and $a$ is the semimajor axis.
+(Note that $\varepsilon=0$ corresponds to a circle, so the ellipticity tells you how different from a circle the ellipse is.)
+Inherently collisional structures such as tidal arms and bridges are also often observed, and these in particular frequently help identify galaxies formed in mergers \citep{Duc2013}.
+\begin{figure}[h!]
+    \centering
+    \centering
+    \includegraphics[width=\linewidth]{merger.png}
+    \caption{
+        A simulated merger of two Sbc galaxies from \cite{Lotz+2008}.
+        From right to left, the top row shows the two undisturbed pre-merger progenitors, the first pass, and the maximal separation after the first pass.
+        The bottom row shows the merger of the nuclei of the galaxies, the remnant 0.5 Gyr post-merger, and the remnant 1.0 Gyr post-merger.
+        }
+    \label{fig:merger}
+\end{figure}
+
+% State why this topic matters to our understanding of galaxy evolution
+Stepping back, a \textbf{galaxy} is defined as a gravitationally bound set of stars whose properties cannot be explained by a combination of baryons (gas, dust, and stars) and Newton's laws of gravity \citep{Willman+2012}, and thus \textbf{galaxy evolution} encompasses the change of galaxies over time and the formation of structures seen in galaxies today.
+Studying the morphology of galaxy merger remnants is incredibly important for understanding galaxy evolution because most galaxies are affected by mergers and interactions \citep{Barnes+1992}.
+For one, knowing how merger remnants look will aid us in identifying past merger events both nearby and at higher redshifts, helping us constrain merger rates and timescales throughout the history of the universe \citep{Lotz+2008}. 
+This will help us understand both the percentage of galaxies that undergo merger events and how many events they undergo.
+Collisional debris, such as tidal tails, even have potential as a method of dating mergers \cite{Duc2013}.
+Additionally, as stated before, the morphology of the remnant is heavily influenced by the properties of the parent galaxies and the collision itself, so knowing precisely how the morphology changes with these factors can allow us to glean information about the progenitors of a remnant, further elucidating the galactic evolution process \citep{Barnes+1992}.
+In particular, we care about major merger events between spirals because they are thought to be a significant formation route for elliptical and spheroidal galaxies \citep{Barnes+1992}, as they're very commonly found in dense clusters. 
+As such, these galaxies are often used to trace past merger events; however, there are other potential formation pathways for ellipticals and spheroids, such as "inside-out growth" consisting of more minor mergers that must be accounted for \citep{Lotz+2008}.
+Thus, studying the morphology of major merger remnants will help us to better distinguish between ellipticals and spheroids formed via major mergers from those formed in other ways, allowing us to see the true prevalence of major mergers in elliptical galaxy formation and better understand the link between spirals and ellipticals.
+
+% Overview of our current understanding of the topic in galaxy evolution
+As it stands, we know a fair amount about how the properties of the progenitor spirals affect the morphology of the remnant.
+The kinematics of the merger are one important factor; a merger of two galaxies with high orbital angular momentum tends to produce oblate, rapidly rotating spheroids --- this is true in general in any case where the parent galaxies merge in a way that leaves the remnant with a high angular momentum --- whereas head-on collisions usually create prolate spheroids \citep{Barnes+1992}. 
+Similarly, prograde orbits pre-merger usually leave remnants with long, narrow tidal tails, as opposed to the shorter, more diffuse plumes associated with retrograde orbits \citep{Duc2013}. 
+The dark matter halos of the merging galaxies also play a vital role in the merger, as their interactions with each other actually cause the most angular momentum loss. 
+Generally, the progenitors' disks and bulges will also lose most of the their angular momentum to interacting with their own disturbed halos, only really interacting with the disk and bulge when they collide and merge; this is why remnants tend to still have dense, luminous central bulges \citep{Barnes+1992}.
+The gas content of the parent galaxies is another crucial determinant of the remnant morphology.
+In particular, dry galaxy major mergers tend to produce rounder, more elliptical remnants, whereas wet major mergers tend to produce more oblate, disk-like galaxies.
+This occurs due to the the fact that as the gas acquires angular momentum during the merger, it tends to flatten out into a rotating disk at the center \citep{Eliche-Moral+2018}.
+On the other hand, large bulges tend to be more conducive to forming massive ellipticals \citep{Barnes+1992}.
+Generally, it's thought that the vast majority of major mergers between spirals create ellipticals; however, simulations such as those by \cite{Eliche-Moral+2018} have shown that these mergers can create significant amounts of very oblate, disk-like remnants, even as far as S0 galaxies on the borderline between ellipticals and spirals, despite concerns that major mergers were too "catastrophic" to allow for an ordered disk to form, as shown in Fig. \ref{fig:morphs}.
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{morphs.png}
+    \caption{
+        Distribution of remnant morphological types across a sample of 202 merger simulations from \cite{Eliche-Moral+2018}.
+        Percentages shown are calculated with respect to the total sample, as well as the samples of major mergers and minor mergers separately.
+        Ellipticals dominate the major merger and overall sample, but S0 types are more prevalent than expected.
+        }
+    \label{fig:morphs}
+\end{figure}
+    
+% What are the open questions related to this topic?
+There are still many questions left unanswered relating to major mergers and remnant morphology, though. 
+For example, what is the precise relationship between bulges and ellipticals? 
+What is the complete range of remnant dynamics and orbital structures that can be produced by a merger? \citep{Barnes+1992}
+What are the exact roles played by mergers and and other evolutionary mechanisms in transforming spirals into elliptical, spheroidal and S0 galaxies? \citep{Eliche-Moral+2018}
+Is more discrete formation through mergers preferred, or more continuous methods like cold gas accretion? \citep{Lotz+2008}
+How does this change with redshift?
+Questions like these are the ones that full simulations of mergers, careful analysis of the morphology of the remnants, and comparisons to real or suspected remnants will be able to answer, especially in the era of abundant JWST data of high redshift galaxies.
+
+% This Project
+\section{This Project}
+
+In this paper, we will investigate the morphology of the stellar remnant of the Milky Way and M31 major merger.
+More specifically, I will take advantage of the available simulation of this merger from \cite{van_der_Marel+2012} to describe the 3D structure of the remnant, rather than sticking to a 2D projection onto the sky.
+I would perform this analysis on both the remnant galaxy as a whole, and at various radii within the remnant.
+
+The main open question I will be addressing the role of mergers in transforming spiral galaxies into elliptical, spheroidal and S0 galaxies. 
+Additionally, I will be contributing to answering the question of what the complete range of remnant orbital structures that can be produced by a merger is. 
+
+The first question is important to answer because ellipticals being typically found in very dense clusters, being more compact in the past, and having little to no present star formation, indicating an environmentally cut off gas supply, suggests that mergers, in particular dry mergers of disk galaxies as described above, are important to their evolution. 
+However, this does not rule out other evolutionary mechanisms, such as "inside-out" growth, in which a compact elliptical expands outwards over time as a result of minor mergers with smaller ellipticals.
+Thus answering this question will help us untangle the dominant evolutionary mechanism for ellipticals (potentially at different redshifts).
+In particular, my study will help identify morphological indicators of elliptical remnants of dry spiral mergers, which can then be used to identify candidates for such remnants in data and thus help quantify the prevalence of the formation route.
+As for the second question, as stated above, knowing the complete range of orbital structures a merger can produce will help us identify merger remnants in general, as well as characterize the mergers that produced them and the overall frequency of galaxy mergers.
+Again, my study will add to this knowledge base and enable better characterization and identification of dry major spiral merger remnants specifically.
+
+% Methodology!!!
+\section{Methodology}
+
+For this study, I used the simulation of the Milky Way-M31 merger from \cite{van_der_Marel+2012}.
+They ran collisionless $N$-body simulations of the MW-M31-M33 system (although M33 is not considered in this study, as it is not part of the merger), meaning each galaxy was represented by a collection of $N$ particles (with $N$ being some large number) which are allowed to interact with each other using Newton's law of gravity.
+The initial conditions of M31 and the MW were chosen to be as close as possible to their present-day states. 
+In particular, the orientations of the galaxies, the scale lengths of their disks and bulges, and the bulge masses were all based on literature values, and the center-of-mass positions and velocities and virial masses were chosen to agree with observational results.
+Disks were modelled with exponential profiles, bulges with $R^{1/4}$ profiles, and dark matter halos with Hernquist profiles. 
+The black hole masses were chosen to be $3.6 \cdot 10^{-6}$ times the halo masses to fit average black hole demographics.
+It is to be noted that only dark matter and stellar mass was included, ignoring the gas because it comprises a small fraction of the mass and its removal allows for higher-resolution calculations.
+The simulation data itself are comprised of snapshot files for each galaxy at specified time intervals over the course of the simulation that contain the velocities and positions of every particle in each galaxy.
+
+I performed the following analysis for 2 different snapshots of both M31 and the Milky Way (MW). 
+The first will be 2 Gyr after the merger occurs (Snap Number 595), so I can compare the result with the prediction that relaxed S0 remnants can form roughly 1 -- 2 Gyr after the merger occurs.
+I also looked at the very last available snapshot (Snap Number 801) to see how or if the remnant relaxed significantly in the intervening time.
+In both cases, I used high-resolution snapshot files so that I can get as accurate a picture of the structure of the remnant as possible.
+The first step was to calculate the center of mass (CoM) of the remnant from the CoMs of the bulge and disk of the MW and M31. 
+My next step was then to make the actual remnant "object" that I will analyze by making one position and one velocity array containing the bulge and disk particles of M31 and the MW and converting them to the remnant center of mass frame. 
+I used these positions and velocities to rotate the remnant such that its angular momentum was aligned with the z-axis, allowing me to observe the remnant "edge-on" and "face-on."
+The following steps, which are pictured in Fig. \ref{fig:methods}, I repeated for the projections of the remnant onto the xy, yz, and xz plane to get a full picture of the 3D structure of the remnant.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{Methods.jpg}
+    \caption{
+        A visualization of the process of finding the 3D structure of the remnant within some radius $r$. You first find the isodensity contours, then fit ellipses to them, then use the averaged like axes of the ellipses to estimate a 3D ellipsoid fit.
+    }
+    \label{fig:methods}
+\end{figure}
+Using \texttt{density\_contour()} from Lab 7, I then fitted 10 isodensity contours to these particles, with the first containing 10\% of the total particles and the last 100\%.
+From there, I fitted an ellipse to each of the contours using least squares fitting, and extracting its semimajor axis $a$ and semiminor axis $b$, as well as the other geometrical properties, like the tilt angle $\theta$ and the center position $(x_o, y_o)$.
+By calculating these geometrical properties for an ellipse fitted to a particular contour for all three projections, I was able to average the corresponding projected axes to approximate the three axes of the ellipsoid shape of the contour, $A$, $B$, and $C$.
+Then, finally, I classified the shape of the ellipsoid fitted to each contour using the relative lengths of the axes; thus I could see both the overall 3D structure of the galaxy, and how that 3D structure changed with radius.
+
+To find the CoM position $R_r$ and velocity $V_r$ of the remnant, I used the typical center of mass equations:
+\begin{equation} \label{eq:comR}
+    R_r = \frac{\sum_{galaxies}\sum_{components}M_iR_i}{\sum_{galaxies}\sum_{components}M_i}
+\end{equation}
+\begin{equation} \label{eq:comV}
+    V_r = \frac{\sum_{galaxies}\sum_{components}M_iV_i}{\sum_{galaxies}\sum_{components}M_i}
+\end{equation}
+where $M_i$ is the mass of a galaxy component, $R_i$ is its CoM position, and $V_i$ is its CoM velocity, and we are summing over the bulges and disks of M31 and the MW.
+The main calculation in my code, though, was finding the geometrical parameters $a$, $b$, $x_o$, $y_o$, and $\theta$ of the fitted ellipses.
+The actual equation of an ellipse used for the least squares fit is 
+\begin{equation}\label{eq:lstsqfit}
+    \alpha x^2 + \beta xy + \gamma y^2 + \eta x + \kappa y + \mu = 0
+\end{equation}
+whereas the equation of an ellipse expressed geometrically (with the quantities we want) is 
+\begin{equation}\label{eq:geom}
+    \frac{(X\cos\theta+Y\sin\theta)^2}{a^2} + \frac{(X\sin\theta+Y\cos\theta)^2}{b^2} = 1 
+\end{equation}
+where $X=x-x_o$ and $Y=y-y_o$.
+Solving equations \ref{eq:lstsqfit} and \ref{eq:geom} then yields the following relations for the geometrical properties:
+\begin{equation}\label{eq:a}
+    a = - \frac{\sqrt{2(\alpha\kappa^2+\gamma\eta^2 - \beta\eta\kappa + (\beta^2 - 4\alpha\gamma)\mu)(\alpha+\gamma + \sqrt{(\alpha-\gamma)^2+\beta^2}}}{\beta^2-4\alpha\gamma}
+\end{equation}
+\begin{equation}\label{eq:b}
+    b = -\frac{\sqrt{2(\alpha\kappa^2+\gamma\eta^2 - \beta\eta\kappa + (\beta^2 - 4\alpha\gamma)\mu)(\alpha+\gamma - \sqrt{(\alpha-\gamma)^2+\beta^2}}}{\beta^2-4\alpha\gamma}
+\end{equation}
+\begin{equation}\label{eq:xo}
+    x_o = \frac{2\gamma\eta - \beta\kappa}{\beta^2 - 4\alpha\gamma}
+\end{equation}
+\begin{equation}\label{eq:yo}
+    y_o = \frac{2\alpha\kappa - \beta\eta}{\beta^2 - 4\alpha\gamma}
+\end{equation}
+\begin{equation}\label{eq:theta}
+    \theta = \frac{1}{2}\arctan2(-\beta,\gamma-\alpha)
+\end{equation}
+with arctan2 being the 2-argument arctangent function. (I will figure out how to make those equations not overflow the page, I promise).
+From there, once I have the elliptical fits for a specific density contour in all three projections, I will estimate the 3D axis $A$ (the closest to the $z$-axis) as the average of the closest axis to the $z$ in the xz and yz projections, and similarly for $B$ (the closest to the $y$ axis) and $C$ (the closest to the $z$ axis).
+From there, I will compute the axis ratios $q_1 = B/A$ and $q_2 = C/A$ and use them to determine the shape of the ellipse as follows: oblate if $q_1 \approx 1 < q_2$, prolate if $q_1 \approx 1 > q_2$, spheroidal id $q_1 \approx q_2 \approx 1$, and triaxial otherwise.
+For each 2D fitted ellipse, I will also calculate the ellipticity as described in Equation \ref{eq:ellipticity}.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=\linewidth]{ellipse_fits.png}
+    \caption{Zoomed in 2D histograms of the projections of the MW-M31 remnant in the XY, XZ, and YZ planes. The colors correspond to the density of particles in logarithmic scale as shown on the colorbar to the right, with lighter colors meaning a higher density. Overplotted in blue are the elliptical isophotes fitted by \texttt{photutils.isophote}. Overall, in each projection, the remnant appears to become more elliptical further from the center. The XZ and YZ projections also generally have more elongated isophotes than the XY projection. Already the remnant is shown to most likely be triaxial.}
+    \label{fig:ell_fits}
+\end{figure*}
+
+One plot I will make will be of the fitted ellipses overplotted on each projection of the remnant for both snapshots; this will help both visually verify how accurate the fitted ellipses are and show how the remnant shape and inclination changes with radius. 
+To show this 2D change in shape quantitatively, though, I will plot the ellipticity of these fitted ellipses versus radius, defined as the largest axis of the fitted ellipse.
+I will quantify the change in 3D shape similarly by plotting $q_1$ and $q_2$ versus radius (again the largest axis of the fitted ellipsoid).
+These plots will show not only the shape of the remnant, but whether it has any significant substructure (such as very spherical bulge, or a disk-like structure). 
+
+My hypothesis is that the remnant will be spheroidal, or maybe slightly oblate, but certainly not as oblate or disk-like as an S0 galaxy. 
+M31 and the Milky Way are both rather gas-poor galaxies residing in the "Green Valley," so I do not expect them to have enough gas to allow the disk to reform post-merger, even in the much later of the two snapshots.
+
+
+\section{Results}
+
+I first plotted 2D histograms of the projections of the remnant onto each of the three coordinate planes with the fitted isophotes overlaid in order to visually inspect them (Figure \ref{fig:ell_fits}). 
+The colors of the underlying histogram correspond to the density of stellar particles in logarithmic scale, with lighter colors meaning higher densities.
+We can clearly see that in the center of the remnant, the fitted isophotes appear more circular, and gradually become more elliptical as they increase in semimajor axis. 
+Additionally, the projections including the z-axis seem to have more elongated isophotes overall than the projection into the XY plane, especially in the YZ plane.
+This already shows us that the remnant will likely be triaxial for the most part.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.1\linewidth]{axis_ratios.png}
+    \caption{Plot of the two axis ratio $q_1$ (blue dotted line) and $q_2$ (red dashed line) as well as the triaxiality parameter $T$ (solid green line) as a function of the length of the largest axis $A$ for each of the 3D ellipsoid fits. The horizontal green dotted-dashed lines indicate the limits of $T$ corresponding to a prolate or oblate ellipsoid. The remnant is clearly  triaxial, although between about 40-90 kpc it is surprisingly close to oblate.}
+    \label{fig:axis_ratios}
+\end{figure}
+To quantitatively show this, however, I plotted the axis ratios $q_1 = B/A$ and $q_2 = C/A$, as well as the triaxiality parameter $T$ \citep{Quenneville+2022} for each 3D fit from the isophotes as a function of the length of the largest axis (Figure \ref{fig:axis_ratios}). 
+I also plotted the limits of $T$ that would indicate a prolate or oblate ellipsoid.
+Here we can see more clearly that overall, $T$ lies fairly solidly in between 0 and 1 for the most part, indicating a triaxial shape.
+Surprisingly, between about 40-60 and 80-90 kpc from the center, the remnant seems to be more oblate than prolate, although still clearly triaxial.
+
+
+\section{Discussion}
+
+As a whole, the result is that the overall shape of the remnant is clearly triaxial, as the triaxiality parameter $T$ stays solidly between 0 and 1 for the last few fitted ellipses (roughly 100 -- 180 kpc).
+In fact, it never exceeds 0.8 or drops below 0.5 in this range. However, between 40 -- 90 kpc, its shape tends to be more oblate, surprisingly, with $0.1 < T < 0.3$ roughly. 
+This overall triaxial, tending slightly towards prolate outer shape of the remnant is more in line with my prediction of a spheroidal or prolate remnant.
+However, the 40 -- 90 kpc range is arguably more reflective of the actual shape of the remnant, given the very low density of particles in the outer parts of the galaxy.
+So the remnant is most likely closer to oblate, which directly contradicts my expectation that it would \textit{not} be oblate.
+
+This triaxial, slightly oblate shape of the remnant does not agree with much existing work in the literature. 
+For one, this is a dry merger that produced an oblate-ish remnant despite the lack of gas to flatten into the disk as \cite{Barnes+1992} expected. 
+This could then indicate that the oblate-ish shape was preserved or reformed in just the stellar matter from the progenitor galaxies, the Milky Way and M31. 
+This could actually support the claim made by \cite{Eliche-Moral+2018} that major mergers are not too "violent" to leave a disk-like remnant; while this remnant is not disk-like enough to be an S0 galaxy, it still shows that oblate-ish remnants are not out of the realm of possibility.
+This result thus shows that dry major mergers can be important formation mechanism of a more diverse range of elliptical galaxies than just the traditional round ellipticals and spheroidals. 
+This could imply that broadly ellipticals as a whole are even more commonly formed from mergers than originally thought, as now a whole new class of them could potentially be merger remnants.
+Additionally, adding to our lexicon of possible merger remnant morphologies not only allows us to more frequently and accurately identify merger remnants, but also the types of mergers that created them.
+
+There are a few uncertainties in the analysis that are worth noting, however. 
+A notable one is the fitting of the elliptical isophotes.
+\texttt{photutils.isophote} fits the isophotes wherever they seem most convenient, and then can return to you the one closest to having a given semimajor axis; as such it is possible that the elliptical isophotes I used to construct the 3D ellipsoids may not actually "match," i.e. trace the same part of the remnant. 
+Another concern is the fitting of the outer isophotes, as the outer edge of the remnant has a short tidal tail that likely skewed the fits.
+The other larger source of uncertainty stems from my method of averaging the vectorized forms of the common axes of the elliptical fits on each projection to estimate a 3D ellipsoid fit. 
+This method unfortunately does not account for differences in the centers of the isophotes, as well as whether the averaged 3D axes would be perfectly perpendicular to each other.
+This is only compounded by the aforementioned issues with the 2D isophotes.
+However, if 2D isophotes are chosen correctly, the geometry of the galaxy itself would theoretically not allow this to be too much of an issue.
+Another uncertainty worth mentioning is the loss of information about the particles inherent to creating a 2D histogram.
+It's possible that a smaller bin size would lead to to more accurate results.
+However, creating a histogram is necessary for measuring particle density, and too small of a bin size could actually create \textit{more} confusion for the isophote fitting algorithm, as too many small insignificant scattered particles could hide the true shape of the remnant. 
+Thus this issue is largely unavoidable, and likely did not increase the uncertainty of the fits very much.
+
+
+%% Bibliography!
+
+\bibliography{biblio}{}
+\bibliographystyle{aasjournal}
+
+
+\end{document}
+
